@@ -12,38 +12,38 @@ const Container = styled.div`
 `
 
 const Left = styled.div`
-    height: 100vh;
-    align-item: center;
-    text-align: center;
-    width: 1400px;
+    flex: 2;
     display: flex; 
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+`
+
+const Right = styled.div`
+    flex: 3;
+    position: relative;
 `
 
 const Title = styled.h1`
     color: white;
+    font-size: 55px;
 `
 
 const WhatWeDo = styled.div`
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
 `
 
 const Line = styled.div`
-    width: 100px;
+    height: 5px;
 `
 
 const Subtitle = styled.div`
-    color: red;
-`
-
-const Right = styled.div`
-    height: 100vh;
-    align-item: center;
-    text-align: center;
-    width: 1400px;
-    display: flex; 
-    justify-content: space-between;
+    color: beige;
+    font-size: 30px;
 `
 
 
@@ -55,19 +55,40 @@ const Section = styled.div`
     justify-content: space-between;
 `
 
+const Img = styled.img`
+    height: 800px; 
+    width: 600px;
+    object-fit: contain; 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    margin: auto; 
+    animation: animate 2s infinite ease alternate; 
+
+    @keyframes animate {
+        100%{
+            transform: translateY(20px);
+        }
+    };
+`
+
 const Hero = () => {
     return (
         <Section>
             <Navbar/>
             <Container>
                 <Left>
-                    <Title>Nuts. Balls. Sacks.</Title>
+                    <Title>Satyam (Sat) Patel</Title>
                     <WhatWeDo>
-                        <Line src=""/>
-                        <Subtitle>What we Do</Subtitle>
+                        <Line></Line>
+                        <Subtitle>Developer. Thinker. Poet.</Subtitle>
                     </WhatWeDo>
                 </Left>
-                <Right></Right>
+                <Right>
+                    <Img src="./img/compbuddy.png"/>
+                </Right>
             </Container>
         </Section>
     )
