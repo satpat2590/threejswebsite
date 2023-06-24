@@ -4,9 +4,6 @@ import Navbar from './Navbar.jsx'
 
 const Container = styled.div`
     height: 100vh;
-    align-item: center;
-    text-align: center;
-    width: 1400px;
     display: flex; 
     justify-content: space-between;
 `
@@ -16,34 +13,39 @@ const Left = styled.div`
     display: flex; 
     flex-direction: column;
     gap: 20px;
-    justify-content: center;
+    margin-top: 2rem;
+    margin-left: 1rem;
 `
 
 const Right = styled.div`
     flex: 3;
     position: relative;
+    text-align: right;
 `
 
 const Title = styled.h1`
     color: white;
-    font-size: 55px;
+    font-size: 45px;
+    text-align: center;
 `
 
-const WhatWeDo = styled.div`
+const Landing = styled.div`
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
+    flex-direction: column;
 
 `
 
 const Line = styled.div`
     height: 5px;
+    background-color: white;
 `
 
 const Subtitle = styled.div`
     color: beige;
-    font-size: 30px;
+    font-size: 20px;
 `
 
 
@@ -56,15 +58,15 @@ const Section = styled.div`
 `
 
 const Img = styled.img`
-    height: 800px; 
-    width: 600px;
-    object-fit: contain; 
-    position: absolute; 
+    height: 200px; 
+    width: 250px;
+    //object-fit: contain; 
     top: 0; 
     bottom: 0; 
     left: 0; 
     right: 0; 
-    margin: auto; 
+    //margin: auto; 
+    margin-right: 2rem; 
     animation: animate 2s infinite ease alternate; 
 
     @keyframes animate {
@@ -80,14 +82,17 @@ const Hero = () => {
             <Navbar/>
             <Container>
                 <Left>
-                    <Title>Satyam (Sat) Patel</Title>
-                    <WhatWeDo>
+                    <Title>satyam (sat)</Title>
+                    <Landing>
                         <Line></Line>
-                        <Subtitle>Developer. Thinker. Poet.</Subtitle>
-                    </WhatWeDo>
+                        <Subtitle>software dev with a passion for history, language, and automata<br></br>
+                        looking to grow my skills in all branches of science/tech and ultimately become a natural philosophist<br></br><br></br>
+                        all projects and thoughts posted on here, so treat this as a 'stream-of-consciousness' from the mind of yours truly :&#41;
+                        </Subtitle>
+                    </Landing>
                 </Left>
                 <Right>
-                    <Img src="./img/compbuddy.png"/>
+                    <Img src="./img/treeofmemory.svg"/>
                 </Right>
             </Container>
         </Section>

@@ -6,14 +6,16 @@ import Works from './components/Works.jsx'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Blogs from './components/Blogs.jsx';
 
+// code here in case you need 'muddy' background again: 
+  // background: url("./img/4040360.jpg");
+
 const Container = styled.div`
   height: 100vh;
-  background-color: rebeccapurple;
+  background-color: black;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   overflow-y: auto;
-  scrollbar-width: none;
-  background: url("./img/4040360.jpg");
+  scrollbar-width: none; 
   &::-webkit-scrollbar {
     display: none;
   }
@@ -30,21 +32,8 @@ function App() {
 
   return (
     <Container>
-      {/* <Router>
-        <Hero/>
-        <Works/>
-        <Contact/>
-      </Router> */}
       <Router>
         <Routes>
-          {/* <Route path="/blogs">
-            <Blogs articles={articles}/>
-          </Route>
-          <Route path="/">
-            <Hero/>
-            <Works/>
-            <Contact/>
-          </Route> */}
           <Route path="/blogs" element={<Blogs articles={articles} />} />
           <Route path="/" element={
             <>
