@@ -100,47 +100,6 @@ const Icon = styled.img`
 
 `
 
-
-// const Works = () => {
-//     return (
-//         <Section>
-//             <Container>
-//                 <Left>
-//                     <List>  
-//                         {data.map(d=>(
-//                             <ListItem key={d.title}>
-//                                 <Topic text={d.title}>{d.title}</Topic>
-//                                 <Icon src={d.img}></Icon>
-//                             </ListItem>
-//                         ))}
-//                     </List>
-//                 </Left>
-//             </Container>
-//         </Section>
-//     )
-// }
-
-// const Works = () => {
-//     return (
-//         <Section>
-//             <Container>
-//                 <Left>
-//                     <List>  
-//                         {data.map(d=>(
-//                             <ListItem key={d.title}>
-//                                 <Link to={`/${d.title.toLowerCase()}`}>
-//                                     <Topic text={d.title}>{d.title}</Topic>
-//                                 </Link>
-//                                 <Icon src={d.img}></Icon>
-//                             </ListItem>
-//                         ))}
-//                     </List>
-//                 </Left>
-//             </Container>
-//         </Section>
-//     )
-// }
-
 import { Link as RouterLink } from 'react-router-dom';
 
 //...

@@ -1,19 +1,23 @@
 import React from 'react';
 import styled from "styled-components";
+import Navbar from './Navbar.jsx'
 
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
     padding: 20px;
-    background-color: #f0f0f0; // Feel free to change this color
+    background-color: #000000; // Feel free to change this color
+`;
+
+const Header = styled.h1`
+    color: white;
 `;
 
 const ArticleButton = styled.button`
-    background-color: #007BFF; // Change as per your theme
-    color: white;
+    background-color: #FFFFF; // Change as per your theme
+    color: black;
+    font-style: bold;
     border: none;
     padding: 15px 32px;
     text-align: center;
@@ -24,9 +28,9 @@ const ArticleButton = styled.button`
     cursor: pointer;
     border-radius: 4px;
     transition: background-color 0.3s ease;
-    
+    margin-left: 2rem;
     &:hover {
-        background-color: #0056b3;
+        background-color: #0b340b;
     }
 `;
 
@@ -48,43 +52,35 @@ const TableHeader = styled.th`
 `;
 
 const TableRow = styled.tr`
-    &:nth-child(even) {
-        background-color: #f2f2f2;
-    }
+
 `;
 
 const TableCell = styled.td`
     border: 1px solid #ddd;
     padding: 8px;
+    color: white;
 `;
 
 const Blogs = ({ articles }) => {
     return (
+        <>
         <Container>
-            <h1>My Blog Articles</h1>
+            <Header>Ramblings!</Header>
             <Table>
-                <thead>
-                    <tr>
-                        <TableHeader>Date Published</TableHeader>
-                        <TableHeader>Title</TableHeader>
-                        <TableHeader>Action</TableHeader>
-                    </tr>
-                </thead>
                 <tbody>
                     {articles.map((article, index) => (
                         <TableRow key={index}>
                             <TableCell>{article.datePublished}</TableCell>
                             <TableCell>{article.title}</TableCell>
-                            <TableCell>
-                                <a href={article.link} target="_blank" rel="noopener noreferrer">
-                                    <ArticleButton>Read</ArticleButton>
-                                </a>
-                            </TableCell>
+                            <a href={article.link} target="_blank" rel="noopener noreferrer">
+                                <ArticleButton>Read</ArticleButton>
+                            </a>
                         </TableRow>
                     ))}
                 </tbody>
             </Table>
         </Container>
+        </>
     )
 }
 

@@ -3,22 +3,21 @@ import styled from "styled-components"
 import Navbar from './Navbar.jsx'
 
 const Container = styled.div`
-    height: 100vh;
     display: flex; 
     justify-content: space-between;
+    margin-bottom: 5rem;
+    height: 300px;
 `
 
 const Left = styled.div`
-    flex: 2;
+    flex: 1;
     display: flex; 
     flex-direction: column;
     gap: 20px;
     margin-top: 2rem;
-    margin-left: 1rem;
 `
 
 const Right = styled.div`
-    flex: 3;
     position: relative;
     text-align: right;
 `
@@ -48,24 +47,41 @@ const Subtitle = styled.div`
     font-size: 20px;
 `
 
+const ComponentStore = styled.div`
+    display: flex; 
+    justify-content: space-between;
+    margin: 0rem 8rem 0rem 8rem;
 
-const Section = styled.div`
-    height: 100vh; 
-    scroll-snap-align: center;
+`
+
+const Component = styled.div`
+    color: white;
+    font-size: 20px;
+    display: flex; 
+    flex-direction: column; 
+`
+
+const ComponentTitle = styled.p`
+    color: white; 
+    &:hover {
+        text-decoration: underline;
+    }
+`
+
+const Section = styled.div` 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    overflow: -moz-scrollbars-horizontal;
+    overflow-y: hidden;
 `
 
 const Img = styled.img`
     height: 200px; 
     width: 250px;
-    //object-fit: contain; 
     top: 0; 
     bottom: 0; 
     left: 0; 
     right: 0; 
-    //margin: auto; 
     margin-right: 2rem; 
     animation: animate 2s infinite ease alternate; 
 
@@ -76,18 +92,22 @@ const Img = styled.img`
     };
 `
 
+const PlaceHolder = styled.div`
+    height: 15vw;
+`
+
 const Hero = () => {
     return (
+        <>
         <Section>
-            <Navbar/>
             <Container>
                 <Left>
-                    <Title>satyam (sat)</Title>
+                    <Title>satyam (sat) patel</Title>
                     <Landing>
                         <Line></Line>
                         <Subtitle>software dev with a passion for history, language, and automata<br></br>
                         looking to grow my skills in all branches of science/tech and ultimately become a natural philosophist<br></br><br></br>
-                        all projects and thoughts posted on here, so treat this as a 'stream-of-consciousness' from the mind of yours truly :&#41;
+                        all thoughts posted on here, so treat this as a 'stream-of-consciousness' from the mind of yours truly :&#41;
                         </Subtitle>
                     </Landing>
                 </Left>
@@ -95,7 +115,33 @@ const Hero = () => {
                     <Img src="./img/treeofmemory.svg"/>
                 </Right>
             </Container>
+
+            <PlaceHolder></PlaceHolder>
+
+            <ComponentStore>
+                <Component>
+                    <ComponentTitle>
+                        poetry
+                    </ComponentTitle>
+                </Component>
+                <Component>
+                    <ComponentTitle>
+                        rambling
+                    </ComponentTitle>
+                </Component>
+                <Component>
+                    <ComponentTitle>
+                        pictures
+                    </ComponentTitle>
+                </Component>
+                <Component>
+                    <ComponentTitle>
+                        projects
+                    </ComponentTitle>
+                </Component>
+            </ComponentStore>
         </Section>
+        </>
     )
 }
 

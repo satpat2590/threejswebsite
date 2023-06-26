@@ -5,21 +5,16 @@ import Who from './components/Who.jsx'
 import Works from './components/Works.jsx'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Blogs from './components/Blogs.jsx';
+import Navbar from './components/Navbar.jsx'
 
 // code here in case you need 'muddy' background again: 
   // background: url("./img/4040360.jpg");
 
 const Container = styled.div`
-  height: 100vh;
+  height: 100vw;
   background-color: black;
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  overflow-y: auto;
-  scrollbar-width: none; 
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
+  overflow: hidden;
 `
 const articles = [
   { title: 'First Article', datePublished: '2023-01-01', link: '/first-article' },
@@ -32,13 +27,13 @@ function App() {
 
   return (
     <Container>
+      <Navbar/>
       <Router>
         <Routes>
           <Route path="/blogs" element={<Blogs articles={articles} />} />
           <Route path="/" element={
             <>
               <Hero />
-              <Works />
             </>
         } />
         </Routes>
